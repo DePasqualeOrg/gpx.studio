@@ -7,6 +7,7 @@
 	import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 	import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
+	import MapContextMenu from './MapContextMenu.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { map } from '$lib/stores';
 	import { settings } from '$lib/db';
@@ -226,6 +227,7 @@
 
 <div {...$$restProps}>
 	<div id="map" class="h-full {webgl2Supported ? '' : 'hidden'}"></div>
+	<MapContextMenu map={$map} />
 	<div
 		class="flex flex-col items-center justify-center gap-3 h-full {webgl2Supported ? 'hidden' : ''}"
 	>
